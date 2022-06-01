@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "prestasis",
+  "collectionName": "arsipkerjasama",
   "info": {
-    "name": "Prestasi",
+    "name": "Arsipkerjasama",
     "description": ""
   },
   "options": {
@@ -16,16 +16,17 @@
       "type": "string",
       "required": true
     },
-    "category": {
-      "via": "prestasi",
-      "model": "category"
-    },
     "deskripsi": {
       "type": "richtext",
       "required": true
     },
+    "slug": {
+      "type": "uid",
+      "targetField": "judul",
+      "required": true
+    },
     "attachment": {
-      "model": "file",
+      "collection": "file",
       "via": "related",
       "allowedTypes": [
         "files",
@@ -36,14 +37,8 @@
       "required": true,
       "pluginOptions": {}
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "judul",
-      "required": true
-    },
-    "Author": {
-      "type": "string",
-      "required": true
+    "author": {
+      "type": "string"
     }
   }
 }
